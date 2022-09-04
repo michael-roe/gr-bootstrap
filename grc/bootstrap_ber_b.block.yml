@@ -1,0 +1,19 @@
+id: bootstrap_ber_b
+label: BER
+category: '[Bootstrap]'
+templates:
+  imports: from gnuradio import bootstrap
+  make: bootstrap.ber_b(${block_size}, ${blocks})
+parameters:
+- id: block_size
+  label: Block_size
+  dtype: int
+- id: blocks
+  label: Blocks
+  dtype: int
+inputs:
+- label: in
+  domain: stream
+  dtype: byte
+  multiplicity: '2'
+file_format: 1

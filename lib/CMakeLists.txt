@@ -12,6 +12,7 @@
 include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND bootstrap_sources
+    ber_b_impl.cc
 )
 
 set(bootstrap_sources "${bootstrap_sources}" PARENT_SCOPE)

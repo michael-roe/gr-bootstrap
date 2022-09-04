@@ -11,5 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/gnuradio/bootstrap
+    ber_b.h DESTINATION include/gnuradio/bootstrap
 )

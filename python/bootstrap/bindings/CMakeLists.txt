@@ -29,7 +29,7 @@ include(GrPybind)
 ########################################################################
 
 list(APPEND bootstrap_python_files
-    python_bindings.cc)
+    ber_b_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(bootstrap
    ../../..
