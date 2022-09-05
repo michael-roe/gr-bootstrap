@@ -22,6 +22,7 @@ private:
   int d_sum_squares;
   int d_samples_todo;
   int d_blocks_todo;
+  pmt::pmt_t d_port;
 
 public:
   ber_b_impl(int block_size, int blocks);

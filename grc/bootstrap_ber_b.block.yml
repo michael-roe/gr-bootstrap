@@ -16,4 +16,7 @@ inputs:
   domain: stream
   dtype: byte
   multiplicity: '2'
+outputs:
+- domain: message
+  id: mean
 file_format: 1

@@ -24,6 +24,9 @@ ber_b_impl::ber_b_impl(int block_size, int blocks)
           gr::io_signature::make(2, 2, sizeof(char)),
           gr::io_signature::make(0, 0, 0))
 {
+  d_port = pmt::mp("mean");
+  message_port_register_out(d_port);
+
   d_block_size = block_size;
   d_blocks = blocks;
   d_samples_todo = block_size;
@@ -68,6 +71,8 @@ int ber_b_impl::work(int noutput_items, gr_vector_const_void_star &input_items,
        est_standard_error = sqrt(block_variance/
          ((double) d_blocks*d_block_size*d_block_size));
        printf("estimated standard error = %lf\n", est_standard_error);
+       message_port_pub(d_port, pmt::cons(pmt::intern("mean"),
+         pmt::from_double(log10(((double) d_total)/((double) (d_blocks*d_block_size))))));
        d_total = 0;
        d_sum_squares = 0;
        d_blocks_todo = d_blocks;
